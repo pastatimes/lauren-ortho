@@ -1,0 +1,18 @@
+{
+  "name": "Janna Pieta – Orthomoleculair Therapeut",
+  "short_name": "Janna Pieta",
+  "description": "3-maanden trajecten naar meer energie en levenslust.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f2",
+  "theme_color": "#6b8f71",
+  "lang": "nl",
+  "icons": [
+    {
+      "src": "https://placehold.co/512x512/6b8f71/ffffff?text=JP",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
