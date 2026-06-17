@@ -419,7 +419,7 @@
 <section class="about" id="over">
   <div class="container">
     <div class="about-grid">
-      <div class="about-image"><img src="Lauren1-12.jpg" alt="Lauren Hendriks" /></div>
+      <div class="about-image"><img src="Lauren1-12.jpg" alt="Lauren Hendriks" data-cms-img="afbeeldingen.profielfoto" /></div>
       <div class="about-text">
         <span class="section-tag">Over mij</span>
         <h2>Hoi, ik ben <em>Lauren</em></h2>
@@ -499,7 +499,7 @@
 </section>
 
 <!-- ── Testimonials ── -->
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
   <div class="container">
     <span class="section-tag">Ervaringen</span>
     <h2>Wat anderen <em>zeggen</em></h2>
@@ -517,7 +517,7 @@
 </section>
 
 <!-- ── CTA ── -->
-<section class="cta">
+<section class="cta" id="cta-sectie">
   <div class="container">
     <span class="section-tag">Klaar om te beginnen?</span>
     <h2>Start jouw traject<br><em>naar meer energie</em></h2>
@@ -576,18 +576,63 @@
   }
 </script>
 <script>
+  const THEMES = {
+    groen:      { '--green': '#6b8f71', '--green-light': '#e8f0e9', '--green-dark': '#4a6b50' },
+    blauw:      { '--green': '#5b8fa8', '--green-light': '#e0ecf4', '--green-dark': '#3a6b85' },
+    terracotta: { '--green': '#a0705a', '--green-light': '#f5ece8', '--green-dark': '#7d5040' },
+    lavendel:   { '--green': '#8070a0', '--green-light': '#ede8f5', '--green-dark': '#5d5080' },
+    zand:       { '--green': '#9a8870', '--green-light': '#f5f0e8', '--green-dark': '#786555' }
+  };
+  const HEADING_FONTS = {
+    'Cormorant Garamond': 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap',
+    'Playfair Display':   'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap',
+    'Lora':               'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap',
+    'DM Serif Display':   'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap'
+  };
+  const BODY_FONTS = {
+    'Inter':         'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap',
+    'DM Sans':       'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap',
+    'Nunito':        'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap',
+    'Source Sans 3': 'https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500&display=swap'
+  };
+
   fetch('content.json').then(r => r.json()).then(data => {
+    // Teksten
     document.querySelectorAll('[data-cms]').forEach(el => {
       const val = el.dataset.cms.split('.').reduce((o, k) => o?.[k], data);
       if (val != null) el.textContent = val;
     });
+    // Email href
     const emailEl = document.querySelector('[data-cms="contact.email"]');
     if (emailEl) emailEl.href = 'mailto:' + emailEl.textContent;
+    // Lijsten
     document.querySelectorAll('[data-cms-list]').forEach(ul => {
-      const key = ul.dataset.cmsList;
-      const items = key.split('.').reduce((o, k) => o?.[k], data);
+      const items = ul.dataset.cmsList.split('.').reduce((o, k) => o?.[k], data);
       if (Array.isArray(items)) ul.innerHTML = items.map(t => `<li>${t}</li>`).join('');
     });
+    // Afbeeldingen
+    document.querySelectorAll('[data-cms-img]').forEach(img => {
+      const val = img.dataset.cmsImg.split('.').reduce((o, k) => o?.[k], data);
+      if (val) img.src = val;
+    });
+    // Secties tonen / verbergen
+    Object.entries(data.secties || {}).forEach(([id, visible]) => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = visible ? '' : 'none';
+    });
+    // Kleurthema
+    const theme = THEMES[data.stijl?.kleur_thema] || THEMES.groen;
+    Object.entries(theme).forEach(([k, v]) => document.documentElement.style.setProperty(k, v));
+    // Lettertypen laden
+    const hf = data.stijl?.kop_lettertype || 'Cormorant Garamond';
+    const bf = data.stijl?.tekst_lettertype || 'Inter';
+    [HEADING_FONTS[hf], BODY_FONTS[bf]].forEach(url => {
+      if (url) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = url; document.head.appendChild(l); }
+    });
+    // Lettertypen toepassen
+    const s = document.createElement('style');
+    s.textContent = `body,input,textarea,button{font-family:'${bf}',sans-serif!important}.nav-logo,h1,h2,h3,blockquote,.traject-num,.stap-num{font-family:'${hf}',serif!important}`;
+    document.head.appendChild(s);
   });
 </script>
 </body>

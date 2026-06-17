@@ -1,4 +1,20 @@
 {
+  "stijl": {
+    "kleur_thema": "groen",
+    "kop_lettertype": "Cormorant Garamond",
+    "tekst_lettertype": "Inter"
+  },
+  "secties": {
+    "over": true,
+    "traject": true,
+    "werkwijze": true,
+    "testimonials": true,
+    "cta-sectie": true,
+    "contact": true
+  },
+  "afbeeldingen": {
+    "profielfoto": "Lauren1-12.jpg"
+  },
   "hero": {
     "tag": "Orthomoleculair Therapeut",
     "titel1": "Meer energie.",

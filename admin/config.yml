@@ -12,17 +12,65 @@ collections:
     label: "Website"
     files:
       - name: "content"
-        label: "Alle teksten"
+        label: "Alle instellingen"
         file: "content.json"
         format: json
         fields:
+
+          - label: "Stijl"
+            name: "stijl"
+            widget: "object"
+            fields:
+              - label: "Kleurthema"
+                name: "kleur_thema"
+                widget: "select"
+                options:
+                  - { label: "Groen (standaard)", value: "groen" }
+                  - { label: "Blauw", value: "blauw" }
+                  - { label: "Terracotta", value: "terracotta" }
+                  - { label: "Lavendel", value: "lavendel" }
+                  - { label: "Zand", value: "zand" }
+              - label: "Lettertype koppen"
+                name: "kop_lettertype"
+                widget: "select"
+                options:
+                  - { label: "Cormorant Garamond – elegant (standaard)", value: "Cormorant Garamond" }
+                  - { label: "Playfair Display – klassiek", value: "Playfair Display" }
+                  - { label: "Lora – warm & leesbaar", value: "Lora" }
+                  - { label: "DM Serif Display – modern", value: "DM Serif Display" }
+              - label: "Lettertype tekst"
+                name: "tekst_lettertype"
+                widget: "select"
+                options:
+                  - { label: "Inter – strak (standaard)", value: "Inter" }
+                  - { label: "DM Sans – vriendelijk", value: "DM Sans" }
+                  - { label: "Nunito – zacht", value: "Nunito" }
+                  - { label: "Source Sans – zakelijk", value: "Source Sans 3" }
+
+          - label: "Secties tonen / verbergen"
+            name: "secties"
+            widget: "object"
+            fields:
+              - { label: "Over mij", name: "over", widget: "boolean", default: true }
+              - { label: "Het traject", name: "traject", widget: "boolean", default: true }
+              - { label: "Werkwijze", name: "werkwijze", widget: "boolean", default: true }
+              - { label: "Ervaringen", name: "testimonials", widget: "boolean", default: true }
+              - { label: "Groene CTA-banner", name: "cta-sectie", widget: "boolean", default: true }
+              - { label: "Contact", name: "contact", widget: "boolean", default: true }
+
+          - label: "Afbeeldingen"
+            name: "afbeeldingen"
+            widget: "object"
+            fields:
+              - { label: "Profielfoto", name: "profielfoto", widget: "image" }
+
           - label: "Hero (bovenste blok)"
             name: "hero"
             widget: "object"
             fields:
               - { label: "Label boven de titel", name: "tag", widget: "string" }
               - { label: "Titel regel 1", name: "titel1", widget: "string" }
-              - { label: "Titel regel 2 (cursief, groen)", name: "titel2", widget: "string" }
+              - { label: "Titel regel 2 (cursief, accentkleur)", name: "titel2", widget: "string" }
               - { label: "Titel regel 3", name: "titel3", widget: "string" }
               - { label: "Ondertitel", name: "subtitel", widget: "text" }
 
