@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "tag": "Orthomoleculair Therapeut",
+    "titel1": "Meer energie.",
+    "titel2": "Meer levenslust.",
+    "titel3": "Meer jijzelf.",
+    "subtitel": "In drie maanden werk je samen met Lauren aan de basis van jouw gezondheid: van binnenuit, op maat, duurzaam."
+  },
+  "over": {
+    "tekst1": "Als orthomoleculair therapeut help ik vrouwen die zich al tijden moe, leeg of niet helemaal zichzelf voelen. Niet met een quick fix, maar met een aanpak die echt werkt: gericht op de oorzaak, niet het symptoom.",
+    "tekst2": "Ik geloof dat jouw lichaam weet wat het nodig heeft. Mijn rol is om dat samen met jou te ontdekken: via voeding, suppletie, leefstijl en ruimte voor jouw verhaal.",
+    "tekst3": "Mijn achtergrond: [opleiding / achtergrond placeholder]. Ik werk vanuit [locatie] en online."
+  },
+  "traject": {
+    "intro": "In drie maanden werken we samen aan meer energie en levenslust. Geen standaard protocol, maar een aanpak die aansluit op wat jij nodig hebt, op jouw tempo, met echte aandacht.",
+    "stap1": { "titel": "Intake & analyse", "tekst": "We beginnen met een uitgebreid intakegesprek. Jouw klachten, leefstijl en doelen staan centraal. Eventueel aangevuld met laboratoriumonderzoek." },
+    "stap2": { "titel": "Persoonlijk plan", "tekst": "Je ontvangt een op maat gemaakt advies op het gebied van voeding, suppletie en leefstijl. Haalbaar, concreet en aansluitend op jouw leven." },
+    "stap3": { "titel": "Begeleiding & groei", "tekst": "Gedurende drie maanden houden we regelmatig contact. We evalueren, stellen bij en vieren de stappen die je zet." }
+  },
+  "werkwijze": {
+    "stap1": { "titel": "Gratis kennismaking", "tekst": "We plannen een vrijblijvend gesprek van 20 minuten. Jij vertelt waar je tegenaan loopt, ik vertel hoe ik kan helpen. Zo weten we allebei of er een klik is." },
+    "stap2": { "titel": "Uitgebreide intake", "tekst": "Een diepgaand gesprek van 90 minuten. We kijken naar jouw klachten, gewoonten, voeding en doelen en leggen de basis voor jouw persoonlijke plan." },
+    "stap3": { "titel": "Jouw plan op maat", "tekst": "Je ontvangt een uitgebreid adviesrapport met concrete stappen. Geen lijst van verboden, maar een plan dat bij jouw leven past." },
+    "stap4": { "titel": "Maandelijkse sessies", "tekst": "Elke maand bespreken we je voortgang, passen we het plan aan en blijven we werken aan duurzame verbetering." }
+  },
+  "testimonials": {
+    "t1": { "quote": "Na jaren moe wakker worden, voel ik eindelijk het verschil. Lauren luistert echt en haar aanpak werkt.", "naam": "Naam, leeftijd · Woonplaats" },
+    "t2": { "quote": "Ik had niet verwacht dat voeding zo'n groot verschil kon maken. Het traject heeft mijn leven veranderd.", "naam": "Naam, leeftijd · Woonplaats" }
+  },
+  "contact": {
+    "email": "info@laurenhendriks.nl",
+    "telefoon": "06 – XX XX XX XX",
+    "locatie": "[Stad] · ook online"
+  },
+  "footer": {
+    "kvk": "[nummer]"
+  }
+}

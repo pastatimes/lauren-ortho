@@ -1,0 +1,119 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "."
+public_folder: "."
+
+locale: nl
+
+collections:
+  - name: "site"
+    label: "Website"
+    files:
+      - name: "content"
+        label: "Alle teksten"
+        file: "content.json"
+        format: json
+        fields:
+          - label: "Hero (bovenste blok)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Label boven de titel", name: "tag", widget: "string" }
+              - { label: "Titel regel 1", name: "titel1", widget: "string" }
+              - { label: "Titel regel 2 (cursief, groen)", name: "titel2", widget: "string" }
+              - { label: "Titel regel 3", name: "titel3", widget: "string" }
+              - { label: "Ondertitel", name: "subtitel", widget: "text" }
+
+          - label: "Over mij"
+            name: "over"
+            widget: "object"
+            fields:
+              - { label: "Alinea 1", name: "tekst1", widget: "text" }
+              - { label: "Alinea 2", name: "tekst2", widget: "text" }
+              - { label: "Alinea 3 (achtergrond & locatie)", name: "tekst3", widget: "text" }
+
+          - label: "Het traject (3 kaarten)"
+            name: "traject"
+            widget: "object"
+            fields:
+              - { label: "Introductietekst", name: "intro", widget: "text" }
+              - label: "Kaart 1"
+                name: "stap1"
+                widget: "object"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Tekst", name: "tekst", widget: "text" }
+              - label: "Kaart 2"
+                name: "stap2"
+                widget: "object"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Tekst", name: "tekst", widget: "text" }
+              - label: "Kaart 3"
+                name: "stap3"
+                widget: "object"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Tekst", name: "tekst", widget: "text" }
+
+          - label: "Werkwijze (4 stappen)"
+            name: "werkwijze"
+            widget: "object"
+            fields:
+              - label: "Stap 1"
+                name: "stap1"
+                widget: "object"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Tekst", name: "tekst", widget: "text" }
+              - label: "Stap 2"
+                name: "stap2"
+                widget: "object"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Tekst", name: "tekst", widget: "text" }
+              - label: "Stap 3"
+                name: "stap3"
+                widget: "object"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Tekst", name: "tekst", widget: "text" }
+              - label: "Stap 4"
+                name: "stap4"
+                widget: "object"
+                fields:
+                  - { label: "Titel", name: "titel", widget: "string" }
+                  - { label: "Tekst", name: "tekst", widget: "text" }
+
+          - label: "Ervaringen (testimonials)"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - label: "Ervaring 1"
+                name: "t1"
+                widget: "object"
+                fields:
+                  - { label: "Quote", name: "quote", widget: "text" }
+                  - { label: "Naam & woonplaats", name: "naam", widget: "string" }
+              - label: "Ervaring 2"
+                name: "t2"
+                widget: "object"
+                fields:
+                  - { label: "Quote", name: "quote", widget: "text" }
+                  - { label: "Naam & woonplaats", name: "naam", widget: "string" }
+
+          - label: "Contactgegevens"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "E-mailadres", name: "email", widget: "string" }
+              - { label: "Telefoonnummer", name: "telefoon", widget: "string" }
+              - { label: "Locatie", name: "locatie", widget: "string" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "KvK-nummer", name: "kvk", widget: "string" }
